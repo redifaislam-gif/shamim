@@ -39,7 +39,9 @@
       position: relative;
       max-width: 600px;
       height: 488px;}
-
+      .bio-product-box .bio-product-itm-right img {
+        width: 398px;
+        height: 379px;}
 }
 
 @media (max-width: 1050px) {
@@ -67,6 +69,23 @@
         line-height: 58px;
     }
 
+    .bio-product-itm-left h2 {
+       
+ 
+        font-size: 35px;}
+
+        .bio-product-itm-left p {
+        
+          font-size: 15px;}
+
+          .bio-product-itm-left .shop-naw {
+            width: 141px;
+            padding: 13px 16px;}
+
+            .bio-product-box .bio-product-itm-right img {
+              width: 364px;
+              height: 379px;
+          }
 }
 @media (max-width: 991px) {
 
@@ -171,4 +190,17 @@ margin-bottom: 20px;}
 .banner-section {
 
   min-height: 90vh;}
+
+  .bio-product-box .bio-product-itm-right img {
+    width: 364px;
+    height: 379px;
+    display: none;
+}
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
 }
