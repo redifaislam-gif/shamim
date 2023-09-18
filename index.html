@@ -6,51 +6,178 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="jquery.nice-number.css" rel="stylesheet">
-
+    <link href="jquery.nice-number.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/responsive.css">
    
-    <title>new-project</title>
+    <title>new-drop</title>
+
+
+    <style>
+
+
+/* header-responsive */
+
+@media(max-width: 991px){
+	.header .menu-overlay.active{
+	visibility: visible;
+	opacity: 1;
+}
+	.header .nav-menu{
+		position: fixed;
+		right: -280px;
+		visibility: hidden;
+		width: 280px;
+		height: 100%;
+		top:0;
+		overflow-y: auto;
+		background-color: #A7B18B;
+		z-index: 1000;
+		padding: 15px 0;
+		transition: all 0.5s ease;
+	}
+	.header .nav-menu.open{
+		visibility: visible;
+		right: 0px;
+	}
+	.header .menu > .menu-item{
+		display: block;
+		margin:0;
+	}
+	.header .menu > .menu-item-has-children > a{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.header .menu > .menu-item > a{
+		color: #111305;
+		padding: 12px 15px;
+
+	}
+	.header .menu > .menu-item:first-child > a{
+	
+	}
+	.header .menu > .menu-item > a .plus:before, 
+	.header .menu > .menu-item > a .plus:after{
+		background-color: #ffffff;
+	}
+	.header .menu > .menu-item-has-children.active > a .plus:after{
+        transform: translate(-50%,-50%) rotate(0deg);
+	}
+	.header .menu > .menu-item > .sub-menu{
+		width: 100%;
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		border:none;
+		background-color: transparent;
+		box-shadow: none;
+		transform: translateY(0px);
+		padding: 0px;
+		left: auto;
+		top:auto;
+		max-height: 0;
+		overflow: hidden;
+	}
+	.header .menu > .menu-item > .sub-menu > .menu-item > a{
+	    padding: 8px 31px;
+		color: #ffffff;
+		border-bottom: 1px solid #333333;
+	}
+	.header .close-nav-menu,
+	.header .open-nav-menu{
+		display: flex;
+	}
+}
+@media(min-width: 992px){
+  .header .menu > .menu-item-has-children:hover > .sub-menu{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+   }
+   .header .menu > .menu-item-has-children:hover > a .plus:after{
+      transform: translate(-50%,-50%) rotate(0deg);		
+   }
+  }
+/* header-responsive-end */
+
+
+    </style>
 </head>
 <body>
-<nav class="navbar">
-    <div class="content">
-        <div class="logo">
-<img src="img/logo.png" alt="">
-        </div>
-        <div class="search-box">
+ <!--header-section-start-->
+  <header class="header">
+    <div class="container-header">
+       <div class="header-main">
+          <div class="logo">
+             <a href="#"><img src="img/logo.png" alt=""></a>
+          </div>
+
+          <div class="search-box">
             <img src="img/search.png" alt="">
             <input type="text" placeholder="Search For Product... ">
         </div>
-        <ul class="menu-list">
 
-            <div class="icon cencel-btn">
-                <i class="fa fa-times"></i>
+          <div class="open-nav-menu">
+             <span></span>
+          </div>
+          <div class="menu-overlay">
+          </div>
+          <!-- navigation menu start -->
+          <nav class="nav-menu">
+            <div class="close-nav-menu">
+               <img src="img/close.svg" alt="close">
             </div>
+            <ul class="menu">
+               <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">product <img src="img/dropdown.png" class="drop-icon plus" alt=""></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="#">Home 1</a></li>
+                      <li class="menu-item"><a href="#">Home 2</a></li>
+                      <li class="menu-item"><a href="#">Home 3</a></li>
+                      <li class="menu-item"><a href="#">Home 4</a></li>
+                  </ul>
+               </li>
+             
+               <li class="menu-item">
+                  <a href="#">Blogs</a>
+               </li>
+               <li class="menu-item menu-item-has-children">
+                  <a href="#" data-toggle="sub-menu">Pages <img src="img/dropdown.png" class="drop-icon plus" alt=""></a>
+                  <ul class="sub-menu">
+                      <li class="menu-item"><a href="#">page 1</a></li>
+                      <li class="menu-item"><a href="#">page 2</a></li>
+                      <li class="menu-item"><a href="#">page 3</a></li>
+                      <li class="menu-item"><a href="#">page 4</a></li>
+                  </ul>
+               </li>
+            
+               <li class="menu-item">
+                  <a href="#">Contact Us</a>
+               </li>
+            </ul>
+          </nav>
 
-            <li><a href="product-details.html">Products <img class="dropdown" src="img/dropdown.png" alt=""></a></li>
-            <li><a href="index.html">Blogs</a></li>
-            <li><a href="">Contact Us</a></li>
-        </ul>
-        <div class="icon menu-btn">
-            <i class="fa fa-bars"></i>
-        </div>
 
-        <img class="cart" src="img/cart.png" alt="">
-
-
-        <div class="my-account-button">
+          <div class="my-account-button">
             <img src="img/myaccount-img.png" alt="">
             <a href="">My Account</a>
             <img src="img/my-account-icon.png" alt="">
         </div>
+          <!-- navigation menu end -->
+       </div>
     </div>
-</nav>
+ </header>
+ <!--header-section-end-->
 
-
+ <!--banner-start-->
 <div class="banner-section">
-<div class="container">
+<div class="container-header">
     <div class="banner-box">
         <div class="banner-content-left">
             <h2>Integrating Body, Enrichingh,
@@ -72,9 +199,9 @@
    
 </div>
 </div>
+ <!--banner-end-->
 
-
-
+ <!--we-are-section-start-->
 <section class="we-are">
   <div class="container">
     <div class="we-are-box">
@@ -108,7 +235,10 @@
   </div>
 
 </section>
+ <!--we-are-section-end-->
 
+
+ <!--tab-product-section-start-->
 <section class="product-section">
 <div class="container-product">
   <div class="product-content-box">
@@ -365,8 +495,10 @@
 
 </div>
 </section>
+ <!--tab-product-section-end-->
 
 
+ <!--bio-product-section-start-->
 
 <section class="bio-product-section">
  <div class="bio-product">
@@ -391,7 +523,9 @@
  </div>
 
 </section>
+   <!--bio-product-section-end-->
 
+   <!--aricle-section-start-->
 <section class="Article-section">
   <div class="container">
      <div class="article-title-content">
@@ -461,8 +595,8 @@
     </div>
   </div>
 </section>
-
-
+    <!--aricle-section-end-->
+    <!--fast-section-start-->
 
 <section class="fast-section">
 <div class="container">
@@ -522,7 +656,12 @@
    
 </section>
 
+    <!--fast-section-end-->
 
+
+
+
+    <!--footer-section-start-->
 
 <footer  class="footer-section">
 
@@ -601,6 +740,7 @@
 
 
 </footer>
+    <!--footer-section-end-->
 
 
 
@@ -608,24 +748,25 @@
 
 
 
-
-<script
+  <script
   src="https://code.jquery.com/jquery-3.7.0.js"
   integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
   crossorigin="anonymous"></script>
-<script src="js/java.js"></script>
-<script src="jquery.nice-number.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
 
-
-<script type="text/javascript">
-$(function(){
-  $('.product-size input[type="number"]').niceNumber();
-});
+    <!-- header-sticky-start -->
+<script>
+  window.addEventListener("scroll", function(){
+    var header = document.querySelector(".header");
+header.classList.toggle("sticky", window.scrollY > 0);
+  })
 </script>
 
+    <!-- header-sticky-end -->
 
-
-
+    
+    <!--tab-product-start-->
 <script>
 
 $(document).ready(function(){
@@ -637,36 +778,17 @@ $(document).ready(function(){
         else{
           $('.itemsBox').not('.'+value).hide('1000');
           $('.itemsBox').filter('.'+value).show('1000');
-    
         
         }
     
-    
-    
       })
-    
-    
+
       $('.list').click(function(){
         $(this).addClass('active').siblings().removeClass('active');
       })
      })
 </script>
 
-<script>
-  var Mainimg = document.getElementById('mainimg');
-  var smallimg= document.getElementsByClassName('small');
-
-  smallimg[0].onclick = function(){
-    Mainimg.src = smallimg[0].src;
-  }
-
-  smallimg[1].onclick = function(){
-    Mainimg.src = smallimg[1].src;
-  }
-
-  smallimg[2].onclick = function(){
-    Mainimg.src = smallimg[2].src;
-  }
-</script>
+    <!--tab-product-end-->
 </body>
 </html>
